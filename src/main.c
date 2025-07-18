@@ -1,8 +1,9 @@
 #include <SDL2/SDL.h>
 #include <GL/glew.h>
-#include "types.h"
+#include <stdbool.h>
 #include "assert.h"
-#include "vectors.h"
+#include "math/vec2.h"
+#include "math/ivec2.h"
 
 typedef struct player_s {
 	vec2_t pos;

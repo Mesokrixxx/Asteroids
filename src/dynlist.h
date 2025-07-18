@@ -1,7 +1,7 @@
 #pragma once
 
 #include <stdlib.h>
-#include "types.h"
+#include <stdint.h>
 
 typedef struct dynlist_s {
 	void *data;
