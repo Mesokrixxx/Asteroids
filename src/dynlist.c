@@ -22,7 +22,7 @@ void	dynlist_add(dynlist_t *l, void *data)
 		l->data = realloc(l->data, l->cap * l->dsize);
 		assert(l->data, "realloc failure");
 	}
-	memcpy(l->data + l->size * l->dsize, data, l->dsize);
+	memcpy((char*)l->data + l->size * l->dsize, data, l->dsize);
 	l->size++;
 }
 
@@ -31,8 +31,8 @@ void	dynlist_remove(dynlist_t *l, uint32_t index)
 	if (index >= l->size)
 		return ;
 	if (index != l->size - 1)
-		memcpy(l->data + index * l->dsize,
-			l->data + (l->size - 1) * l->dsize, l->dsize);
+		memcpy((char*)l->data + index * l->dsize,
+			(char*)l->data + (l->size - 1) * l->dsize, l->dsize);
 	l->size--;
 }
 
