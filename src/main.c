@@ -45,11 +45,14 @@ int	main(void)
 				case (SDL_QUIT):
 					game.running = false;
 					break ;
-			};
-			switch (ev.window.event)
-			{
-				case (SDL_WINDOWEVENT_RESIZED):
-					game.window_size = ivec2_of(ev.window.data1, ev.window.data2);
+				case (SDL_WINDOWEVENT):
+					switch (ev.window.event)
+					{
+						case (SDL_WINDOWEVENT_RESIZED):
+							game.window_size = 
+								ivec2_of(ev.window.data1, ev.window.data2);
+							break ;
+					};
 					break ;
 			};
 		}

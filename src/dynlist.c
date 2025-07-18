@@ -19,7 +19,7 @@ void	dynlist_add(dynlist_t *l, void *data)
 	if (l->size >= l->cap)
 	{
 		l->cap *= 2;
-		l->data = realloc(l->data, l->cap);
+		l->data = realloc(l->data, l->cap * l->dsize);
 		assert(l->data, "realloc failure");
 	}
 	memcpy(l->data + l->size * l->dsize, data, l->dsize);
